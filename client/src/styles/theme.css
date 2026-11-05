@@ -1,0 +1,836 @@
+/*
+ * SEEDS APP PREMIUM THEME — Ultra-premium VIP design system
+ *
+ * Light Mode Palette:
+ *   Warm ivory (#F6F0E5) -> 246 240 229
+ *   Champagne gold (#E6C47A) -> 230 196 122
+ *   Soft mint glow (#A4F3D1) -> 164 243 209
+ *   Jade (#35D39A) -> 53 211 154
+ *   Royal green (#087F5B) -> 8 127 91
+ *   Deep emerald (#0B3D30) -> 11 61 48
+ *   Midnight forest (#071A16) -> 7 26 22
+ *
+ * Dark Mode Palette (inverted for premium dark theme):
+ *   Midnight forest background with glowing accents
+ */
+
+:root {
+  /* Corner radius for the whole app — softer, more organic feel */
+  --radius: 1rem;
+
+  /* Radius scale tokens */
+  --radius-sm: 0.375rem;   /* 6px */
+  --radius-md: 0.5rem;     /* 8px */
+  --radius-lg: 0.75rem;    /* 12px */
+  --radius-xl: 1rem;       /* 16px */
+  --radius-2xl: 1.25rem;   /* 20px */
+  --radius-3xl: 1.5rem;    /* 24px */
+  --radius-full: 9999px;
+
+  /* Typography scale — font sizes */
+  --font-xs: 0.75rem;      /* 12px */
+  --font-sm: 0.875rem;     /* 14px */
+  --font-base: 1rem;       /* 16px */
+  --font-lg: 1.125rem;     /* 18px */
+  --font-xl: 1.25rem;      /* 20px */
+  --font-2xl: 1.5rem;      /* 24px */
+  --font-3xl: 1.875rem;    /* 30px */
+  --font-4xl: 2.25rem;     /* 36px */
+
+  /* Line height tokens */
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
+
+  /* Font weight tokens */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Letter spacing tokens */
+  --tracking-tighter: -0.05em;
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+
+  /* Spacing scale (4px increments) */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+
+  /* Page background and body text — Warm ivory base */
+  --background: 246 240 229;
+  --foreground: 7 26 22;
+
+  /* Cards, panels, modal bodies — slightly elevated warm tone */
+  --card: 255 252 245;
+  --card-foreground: 7 26 22;
+
+  /* De-emphasised surfaces and text: hover fills, captions, placeholders */
+  --muted: 235 228 215;
+  --muted-foreground: 80 95 88;
+
+  /* Brand colour — primary buttons, active states, focus ring (Royal green) */
+  --primary: 8 127 91;
+  --primary-foreground: 255 255 255;
+
+  /* Neutral action — Cancel buttons, secondary chips (Deep emerald tint) */
+  --secondary: 11 61 48;
+  --secondary-foreground: 246 240 229;
+
+  /* Soft brand tint — icon chips, active nav item, highlighted row (Champagne gold) */
+  --accent: 230 196 122;
+  --accent-foreground: 7 26 22;
+
+  /* Destructive — delete buttons, form errors */
+  --destructive: 185 60 60;
+  --destructive-foreground: 255 255 255;
+
+  /* Status accents (used by <Alert variant="success" | "warning" />) */
+  --success: 53 211 154;
+  --warning: 230 196 122;
+
+  /* Lines and focus */
+  --border: 220 210 195;
+  --input: 210 200 185;
+  --ring: 8 127 91;
+
+  /* Premium additions */
+  --glow-primary: 53 211 154;
+  --glow-accent: 230 196 122;
+  --glass-bg: 255 252 245 / 0.7;
+  --glass-border: 255 255 255 / 0.3;
+
+  /* Screen-specific gradient tokens */
+  --gradient-home: linear-gradient(135deg, rgb(var(--primary) / 0.08) 0%, transparent 50%, rgb(var(--accent) / 0.05) 100%);
+  --gradient-community: linear-gradient(135deg, rgb(var(--success) / 0.1) 0%, transparent 50%, rgb(var(--primary) / 0.05) 100%);
+  --gradient-profile: linear-gradient(135deg, rgb(var(--accent) / 0.08) 0%, transparent 50%, rgb(var(--primary) / 0.05) 100%);
+  --gradient-trees: linear-gradient(180deg, rgb(var(--success) / 0.08) 0%, transparent 100%);
+  --gradient-explore: linear-gradient(135deg, rgb(var(--accent) / 0.1) 0%, rgb(var(--primary) / 0.05) 100%);
+
+  /* Brand color tokens */
+  --brand-emerald: 11 61 48;
+  --brand-jade: 53 211 154;
+  --brand-gold: 230 196 122;
+  --brand-midnight: 7 26 22;
+
+  /* Enhanced gradient tokens */
+  --gradient-splash: radial-gradient(ellipse at 50% 50%, rgba(11, 61, 48, 0.9) 0%, rgba(7, 26, 22, 1) 100%);
+  --gradient-community-vibrant: linear-gradient(135deg, rgb(var(--success) / 0.15) 0%, rgb(var(--accent) / 0.1) 50%, rgb(var(--primary) / 0.08) 100%);
+}
+
+/* Dark mode — Midnight forest with glowing accents */
+.dark {
+  --background: 7 26 22;
+  --foreground: 246 240 229;
+
+  --card: 15 45 38;
+  --card-foreground: 246 240 229;
+
+  --muted: 25 55 45;
+  --muted-foreground: 180 195 188;
+
+  --primary: 53 211 154;
+  --primary-foreground: 7 26 22;
+
+  --secondary: 11 61 48;
+  --secondary-foreground: 246 240 229;
+
+  --accent: 230 196 122;
+  --accent-foreground: 7 26 22;
+
+  --destructive: 220 90 90;
+  --destructive-foreground: 255 255 255;
+
+  --success: 53 211 154;
+  --warning: 230 196 122;
+
+  --border: 40 70 58;
+  --input: 50 80 68;
+  --ring: 53 211 154;
+
+  --glow-primary: 53 211 154;
+  --glow-accent: 230 196 122;
+  --glass-bg: 15 45 38 / 0.8;
+  --glass-border: 53 211 154 / 0.2;
+
+  /* Screen-specific gradient tokens (dark mode) */
+  --gradient-home: linear-gradient(135deg, rgb(var(--primary) / 0.12) 0%, transparent 50%, rgb(var(--accent) / 0.08) 100%);
+  --gradient-community: linear-gradient(135deg, rgb(var(--success) / 0.15) 0%, transparent 50%, rgb(var(--primary) / 0.08) 100%);
+  --gradient-profile: linear-gradient(135deg, rgb(var(--accent) / 0.12) 0%, transparent 50%, rgb(var(--primary) / 0.08) 100%);
+  --gradient-trees: linear-gradient(180deg, rgb(var(--success) / 0.12) 0%, transparent 100%);
+  --gradient-explore: linear-gradient(135deg, rgb(var(--accent) / 0.15) 0%, rgb(var(--primary) / 0.08) 100%);
+
+  /* Brand color tokens (dark mode) */
+  --brand-emerald: 53 211 154;
+  --brand-jade: 53 211 154;
+  --brand-gold: 230 196 122;
+  --brand-midnight: 7 26 22;
+
+  /* Enhanced gradient tokens (dark mode) */
+  --gradient-splash: radial-gradient(ellipse at 50% 50%, rgba(53, 211, 154, 0.15) 0%, rgba(7, 26, 22, 1) 100%);
+  --gradient-community-vibrant: linear-gradient(135deg, rgb(var(--success) / 0.2) 0%, rgb(var(--accent) / 0.15) 50%, rgb(var(--primary) / 0.12) 100%);
+}
+
+/* Smooth transitions for theme switching */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Premium glassmorphism utility classes */
+.glass {
+  background: rgba(var(--glass-bg));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(var(--glass-border));
+}
+
+.glass-subtle {
+  background: rgba(var(--card) / 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.glass-premium {
+  background: rgba(var(--glass-bg));
+  backdrop-filter: blur(16px) saturate(1.5);
+  -webkit-backdrop-filter: blur(16px) saturate(1.5);
+  border: 1px solid rgba(var(--glass-border));
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05),
+              inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Glowing effects */
+.glow-primary {
+  box-shadow: 0 0 20px rgba(var(--glow-primary) / 0.3),
+              0 0 40px rgba(var(--glow-primary) / 0.1);
+}
+
+.glow-accent {
+  box-shadow: 0 0 20px rgba(var(--glow-accent) / 0.3),
+              0 0 40px rgba(var(--glow-accent) / 0.1);
+}
+
+.glow-text {
+  text-shadow: 0 0 20px rgba(var(--glow-primary) / 0.5);
+}
+
+/* Golden accent glow */
+.glow-golden {
+  box-shadow: 0 0 15px rgba(var(--glow-accent) / 0.4),
+              0 0 30px rgba(var(--glow-accent) / 0.2),
+              0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.glow-golden-text {
+  text-shadow: 0 0 15px rgba(var(--glow-accent) / 0.6);
+}
+
+/* Inner glow for cards */
+.glow-inner {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1),
+              inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* Premium gradient backgrounds */
+.gradient-primary {
+  background: linear-gradient(135deg, 
+    rgb(var(--primary)) 0%, 
+    rgb(var(--primary) / 0.8) 50%,
+    rgb(var(--success)) 100%);
+}
+
+.gradient-accent {
+  background: linear-gradient(135deg, 
+    rgb(var(--accent)) 0%, 
+    rgb(var(--accent) / 0.8) 100%);
+}
+
+.gradient-hero {
+  background: linear-gradient(180deg, 
+    rgb(var(--primary) / 0.1) 0%, 
+    transparent 100%);
+}
+
+/* Screen-specific gradients */
+.gradient-screen-home {
+  background: var(--gradient-home);
+}
+
+.gradient-screen-community {
+  background: var(--gradient-community);
+}
+
+.gradient-screen-profile {
+  background: var(--gradient-profile);
+}
+
+.gradient-screen-trees {
+  background: var(--gradient-trees);
+}
+
+.gradient-screen-explore {
+  background: var(--gradient-explore);
+}
+
+/* Premium avatar ring gradient */
+.avatar-ring {
+  position: relative;
+}
+
+.avatar-ring::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, 
+    rgb(var(--primary)), 
+    rgb(var(--success)), 
+    rgb(var(--accent)));
+  z-index: -1;
+  opacity: 0.8;
+}
+
+/* Shimmer effect for loading states */
+.shimmer-golden {
+  background: linear-gradient(
+    90deg,
+    rgba(var(--glow-accent) / 0) 0%,
+    rgba(var(--glow-accent) / 0.3) 50%,
+    rgba(var(--glow-accent) / 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+/* Tree growth animation */
+@keyframes growBranch {
+  from { transform: scaleY(0); opacity: 0; }
+  to { transform: scaleY(1); opacity: 1; }
+}
+
+@keyframes sproutLeaf {
+  0% { transform: scale(0); opacity: 0; }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes sway {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+
+.animate-grow-branch {
+  animation: growBranch 0.8s ease-out forwards;
+  transform-origin: bottom center;
+}
+
+.animate-sprout-leaf {
+  animation: sproutLeaf 0.5s ease-out forwards;
+}
+
+.animate-sway {
+  animation: sway 3s ease-in-out infinite;
+}
+
+/* Safe area padding for mobile devices */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.pt-safe {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+/* Completion animation */
+@keyframes checkmarkScale {
+  0% { transform: scale(0); opacity: 0; }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-checkmark {
+  animation: checkmarkScale 0.4s ease-out forwards;
+}
+
+/* Status transition animations */
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-slide-in {
+  animation: fadeSlideIn 0.3s ease-out forwards;
+}
+
+/* Priority indicator pulse for high priority */
+@keyframes priorityPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.animate-priority-pulse {
+  animation: priorityPulse 2s ease-in-out infinite;
+}
+
+/* Skeleton shimmer */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-shimmer {
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+/* Leaf celebration particles */
+@keyframes leafFloat {
+  0% { transform: translateY(0) rotate(0deg) scale(1); opacity: 1; }
+  100% { transform: translateY(-60px) rotate(180deg) scale(0.3); opacity: 0; }
+}
+
+.animate-leaf-float {
+  animation: leafFloat 1s ease-out forwards;
+}
+
+/* Success checkmark burst */
+@keyframes successBurst {
+  0% { transform: scale(0); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-success-burst {
+  animation: successBurst 0.5s ease-out forwards;
+}
+
+/* Slide up for list items */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s ease-out forwards;
+}
+
+/* Premium floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Gentle pulse glow */
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 15px rgba(var(--glow-primary) / 0.2); }
+  50% { box-shadow: 0 0 25px rgba(var(--glow-primary) / 0.4); }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* Aurora gradient movement */
+@keyframes auroraMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-aurora {
+  background-size: 200% 200%;
+  animation: auroraMove 15s ease infinite;
+}
+
+/* Particle drift */
+@keyframes particleDrift {
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.6; }
+  90% { opacity: 0.6; }
+  100% { transform: translate(100px, -200px) rotate(360deg); opacity: 0; }
+}
+
+.animate-particle {
+  animation: particleDrift 8s ease-in-out infinite;
+}
+
+/* Organic blob morphing */
+@keyframes blobMorph {
+  0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  25% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+  50% { border-radius: 50% 60% 30% 60% / 30% 60% 70% 40%; }
+  75% { border-radius: 60% 40% 60% 30% / 40% 50% 60% 50%; }
+}
+
+.animate-blob {
+  animation: blobMorph 8s ease-in-out infinite;
+}
+
+/* Splash screen aurora animation */
+@keyframes splashAurora {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+.animate-splash-aurora {
+  animation: splashAurora 8s ease-in-out infinite;
+}
+
+/* Aurora shift for backgrounds */
+@keyframes auroraShift {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 50% 0%; }
+  50% { background-position: 100% 50%; }
+  75% { background-position: 50% 100%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-aurora-shift {
+  background-size: 200% 200%;
+  animation: auroraShift 20s ease infinite;
+}
+
+/* Float up animation for particles */
+@keyframes floatUp {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  10% { opacity: 0.8; }
+  90% { opacity: 0.6; }
+  100% { transform: translateY(-100vh) translateX(20px); opacity: 0; }
+}
+
+.animate-float-up {
+  animation: floatUp 6s ease-out infinite;
+}
+
+/* Golden shimmer effect */
+@keyframes goldenShimmer {
+  0%, 100% { opacity: 0.3; filter: brightness(1); }
+  50% { opacity: 0.6; filter: brightness(1.3); }
+}
+
+.animate-golden-shimmer {
+  animation: goldenShimmer 3s ease-in-out infinite;
+}
+
+/* Leaf grow animation */
+@keyframes leafGrow {
+  0% { transform: scale(0) rotate(-10deg); opacity: 0; }
+  50% { transform: scale(1.1) rotate(5deg); }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+.animate-leaf-grow {
+  animation: leafGrow 0.8s ease-out forwards;
+}
+
+/* Pulse glow with brand colors */
+@keyframes pulseGlowBrand {
+  0%, 100% { box-shadow: 0 0 15px rgba(var(--brand-jade) / 0.2), 0 0 30px rgba(var(--brand-emerald) / 0.1); }
+  50% { box-shadow: 0 0 25px rgba(var(--brand-jade) / 0.4), 0 0 50px rgba(var(--brand-emerald) / 0.2); }
+}
+
+.animate-pulse-glow-brand {
+  animation: pulseGlowBrand 3s ease-in-out infinite;
+}
+
+/* Brand utility classes */
+.brand-glow {
+  box-shadow: 0 0 20px rgba(var(--brand-jade) / 0.3),
+              0 0 40px rgba(var(--brand-emerald) / 0.15);
+}
+
+.gold-accent {
+  color: rgb(var(--brand-gold));
+  text-shadow: 0 0 10px rgba(var(--brand-gold) / 0.4);
+}
+
+.emerald-depth {
+  background: linear-gradient(135deg, 
+    rgba(var(--brand-emerald) / 0.1) 0%,
+    rgba(var(--brand-jade) / 0.05) 50%,
+    transparent 100%);
+}
+
+/* Enhanced glassmorphism with brand border glow */
+.glass-premium-brand {
+  background: rgba(var(--glass-bg));
+  backdrop-filter: blur(20px) saturate(1.8);
+  -webkit-backdrop-filter: blur(20px) saturate(1.8);
+  border: 1px solid rgba(var(--brand-jade) / 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08),
+              inset 0 1px 0 rgba(255, 255, 255, 0.1),
+              0 0 20px rgba(var(--brand-jade) / 0.05);
+}
+
+/* Gradient mesh background utility */
+.gradient-mesh {
+  background:
+    radial-gradient(at 40% 20%, rgba(var(--brand-jade) / 0.08) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, rgba(var(--brand-gold) / 0.06) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, rgba(var(--brand-emerald) / 0.08) 0px, transparent 50%),
+    radial-gradient(at 80% 50%, rgba(var(--brand-jade) / 0.06) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(var(--brand-gold) / 0.08) 0px, transparent 50%);
+}
+
+/* ─── Premium Glow Pulse Animation ─────────────────────────────────────────── */
+@keyframes glow-pulse {
+  0%, 100% { 
+    box-shadow: 0 0 15px rgba(var(--glow-primary) / 0.2),
+                0 0 30px rgba(var(--glow-primary) / 0.1);
+    opacity: 1;
+  }
+  50% { 
+    box-shadow: 0 0 25px rgba(var(--glow-primary) / 0.4),
+                0 0 50px rgba(var(--glow-primary) / 0.2);
+    opacity: 0.95;
+  }
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* ─── Float Particle Animation ────────────────────────────────────────────── */
+@keyframes float-particle {
+  0% { 
+    transform: translateY(0) translateX(0) scale(1); 
+    opacity: 0; 
+  }
+  10% { 
+    opacity: 0.7; 
+  }
+  50% {
+    transform: translateY(-40px) translateX(15px) scale(0.8);
+    opacity: 0.5;
+  }
+  90% { 
+    opacity: 0.3; 
+  }
+  100% { 
+    transform: translateY(-80px) translateX(-10px) scale(0.4); 
+    opacity: 0; 
+  }
+}
+
+.animate-float-particle {
+  animation: float-particle 4s ease-out infinite;
+}
+
+/* ─── Shimmer Gold Animation ──────────────────────────────────────────────── */
+@keyframes shimmer-gold {
+  0% { 
+    background-position: -200% center;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% { 
+    background-position: 200% center;
+    opacity: 0;
+  }
+}
+
+.animate-shimmer-gold {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(var(--brand-gold) / 0.4) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer-gold 2.5s ease-in-out infinite;
+}
+
+/* ─── Aurora Shift Animation ──────────────────────────────────────────────── */
+@keyframes aurora-shift {
+  0% { 
+    background-position: 0% 50%;
+    filter: hue-rotate(0deg);
+  }
+  25% {
+    background-position: 50% 0%;
+  }
+  50% { 
+    background-position: 100% 50%;
+    filter: hue-rotate(10deg);
+  }
+  75% {
+    background-position: 50% 100%;
+  }
+  100% { 
+    background-position: 0% 50%;
+    filter: hue-rotate(0deg);
+  }
+}
+
+.animate-aurora-shift-premium {
+  background-size: 300% 300%;
+  animation: aurora-shift 20s ease infinite;
+}
+
+/* ─── Gradient Border Utility ─────────────────────────────────────────────── */
+.border-glow {
+  position: relative;
+  border: 1px solid transparent;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.border-glow::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgba(var(--glow-primary) / 0.5),
+    rgba(var(--glow-accent) / 0.3),
+    rgba(var(--glow-primary) / 0.5)
+  );
+  z-index: -1;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+}
+
+/* ─── Emerald Glow Utility ────────────────────────────────────────────────── */
+.glow-emerald {
+  box-shadow: 0 0 20px rgba(var(--brand-jade) / 0.35),
+              0 0 40px rgba(var(--brand-emerald) / 0.2),
+              0 0 60px rgba(var(--brand-jade) / 0.1);
+}
+
+/* ─── Gold Glow Utility ───────────────────────────────────────────────────── */
+.glow-gold {
+  box-shadow: 0 0 20px rgba(var(--brand-gold) / 0.4),
+              0 0 40px rgba(var(--brand-gold) / 0.2),
+              0 0 60px rgba(var(--brand-gold) / 0.1);
+}
+
+/* ─── Glass Premium Enhanced ──────────────────────────────────────────────── */
+.glass-premium-enhanced {
+  background: rgba(var(--glass-bg));
+  backdrop-filter: blur(24px) saturate(1.8);
+  -webkit-backdrop-filter: blur(24px) saturate(1.8);
+  border: 1px solid rgba(var(--glass-border));
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset,
+    0 1px 0 rgba(255, 255, 255, 0.1) inset;
+}
+
+/* ─── Success Shimmer Pulse ───────────────────────────────────────────────── */
+@keyframes success-shimmer {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(var(--brand-gold) / 0);
+  }
+  50% {
+    box-shadow: 0 0 20px 4px rgba(var(--brand-gold) / 0.3);
+  }
+}
+
+.animate-success-shimmer {
+  animation: success-shimmer 1.5s ease-out;
+}
+
+/* ─── Card Hover Lift Effect ──────────────────────────────────────────────── */
+.card-hover-lift {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.3s ease;
+}
+
+.card-hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.12),
+    0 0 20px rgba(var(--glow-primary) / 0.1);
+}
+
+/* ─── Button Press Micro-interaction ──────────────────────────────────────── */
+.button-press:active {
+  transform: scale(0.97);
+  filter: brightness(1.1);
+}
+
+/* ─── Tab Underline Slide ─────────────────────────────────────────────────── */
+@keyframes tab-slide {
+  from { transform: scaleX(0); opacity: 0; }
+  to { transform: scaleX(1); opacity: 1; }
+}
+
+.tab-indicator {
+  transform-origin: left;
+  animation: tab-slide 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* ─── Number Count Animation Helper ───────────────────────────────────────── */
+.count-up {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Reduced motion — disable all animations */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .animate-shimmer,
+  .animate-sway,
+  .animate-priority-pulse,
+  .animate-leaf-float,
+  .animate-success-burst,
+  .animate-slide-up,
+  .animate-grow-branch,
+  .animate-sprout-leaf,
+  .animate-checkmark,
+  .animate-fade-slide-in,
+  .animate-float,
+  .animate-pulse-glow,
+  .animate-aurora,
+  .animate-particle,
+  .animate-blob,
+  .animate-splash-aurora,
+  .animate-aurora-shift,
+  .animate-float-up,
+  .animate-golden-shimmer,
+  .animate-leaf-grow,
+  .animate-pulse-glow-brand,
+  .animate-glow-pulse,
+  .animate-float-particle,
+  .animate-shimmer-gold,
+  .animate-aurora-shift-premium,
+  .animate-success-shimmer {
+    animation: none !important;
+  }
+  
+  .card-hover-lift:hover {
+    transform: none;
+  }
+  
+  .button-press:active {
+    transform: none;
+  }
+}

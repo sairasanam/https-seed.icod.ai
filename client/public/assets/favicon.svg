@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="favicon-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B3D30"/>
+      <stop offset="100%" stop-color="#071A16"/>
+    </linearGradient>
+    <linearGradient id="favicon-leaf" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#35D39A"/>
+      <stop offset="100%" stop-color="#E6C47A"/>
+    </linearGradient>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="48" fill="url(#favicon-bg)"/>
+  <!-- Seed base -->
+  <path d="M50 78 C38 78 30 68 30 56 C30 42 40 32 50 25 C60 32 70 42 70 56 C70 68 62 78 50 78Z" fill="#FFFFFF" opacity="0.9"/>
+  <!-- Sprout stem -->
+  <path d="M50 42 Q50 30 50 20" stroke="#35D39A" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+  <!-- Left leaf -->
+  <path d="M50 26 Q40 18 32 21 Q26 26 30 34 Q36 37 50 26Z" fill="url(#favicon-leaf)" opacity="0.95"/>
+  <!-- Right leaf -->
+  <path d="M50 26 Q60 18 68 21 Q74 26 70 34 Q64 37 50 26Z" fill="url(#favicon-leaf)" opacity="0.95"/>
+</svg>
